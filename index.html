@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Proposal — Diligent Auto Detailing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F0EBE3;--sand:#E2D9CE;--dark:#1C1410;--maroon:#6B1F1F;--maroon-light:#8B3030;--warm-gray:#8C8178;--white:#FDFAF7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+header{background:var(--dark);padding:60px 80px 50px;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border:1px solid rgba(255,255,255,0.05);border-radius:50%}
+.header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:60px}
+.from-brand{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--warm-gray)}
+.from-brand strong{display:block;font-size:14px;color:var(--white);letter-spacing:2px;margin-top:4px}
+.proposal-badge{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--maroon-light);border:1px solid var(--maroon);padding:6px 14px;border-radius:2px;font-weight:500}
+.header-main h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,70px);font-weight:300;color:var(--white);line-height:1.1}
+.header-main h1 em{color:var(--maroon-light);font-style:italic}
+.header-meta{display:flex;gap:50px;margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap}
+.meta-item label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--warm-gray);display:block;margin-bottom:4px}
+.meta-item span{font-size:14px;color:var(--white);font-weight:400}
+main{max-width:900px;margin:0 auto;padding:80px 40px}
+section{margin-bottom:80px;opacity:0;transform:translateY(20px);animation:fadeUp 0.6s ease forwards}
+section:nth-child(1){animation-delay:0.1s}section:nth-child(2){animation-delay:0.2s}section:nth-child(3){animation-delay:0.3s}section:nth-child(4){animation-delay:0.4s}section:nth-child(5){animation-delay:0.5s}section:nth-child(6){animation-delay:0.6s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--maroon);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--sand)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,40px);font-weight:400;line-height:1.2;margin-bottom:24px}
+p{font-size:15px;color:#4A423A;margin-bottom:16px}
+.overview-card{background:var(--dark);color:var(--white);padding:50px;border-radius:4px;position:relative;overflow:hidden}
+.overview-card::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:200px;color:rgba(255,255,255,0.04);position:absolute;top:-20px;right:30px;line-height:1}
+.overview-card p{color:rgba(255,255,255,0.75);font-size:16px;line-height:1.8;margin:0}
+.deliverables-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--sand);border:1px solid var(--sand);border-radius:4px;overflow:hidden}
+.deliverable-item{background:var(--white);padding:28px 30px;transition:background 0.2s}
+.deliverable-item:hover{background:var(--cream)}
+.del-number{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--sand);font-weight:300;line-height:1;margin-bottom:8px}
+.del-title{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:6px}
+.del-desc{font-size:12px;color:var(--warm-gray);line-height:1.5}
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--sand)}
+.timeline-item{position:relative;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid var(--sand)}
+.timeline-item:last-child{border-bottom:none;margin-bottom:0}
+.timeline-item::before{content:'';position:absolute;left:-34px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--maroon)}
+.timeline-phase{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);font-weight:500;margin-bottom:4px}
+.timeline-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:8px}
+.timeline-days{display:inline-block;font-size:11px;background:var(--sand);color:var(--dark);padding:3px 10px;border-radius:2px;margin-bottom:10px;font-weight:500}
+.timeline-desc{font-size:13px;color:var(--warm-gray);line-height:1.6}
+.investment-block{background:var(--white);border:1px solid var(--sand);border-radius:4px;overflow:hidden}
+.investment-header{background:var(--maroon);color:var(--white);padding:20px 36px;display:flex;justify-content:space-between;align-items:center}
+.investment-header span{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.8}
+.investment-header strong{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400}
+.payment-rows{padding:0 36px}
+.payment-row{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--sand)}
+.payment-row:last-child{border-bottom:none}
+.payment-label{font-size:13px;color:var(--dark)}
+.payment-label small{display:block;font-size:11px;color:var(--warm-gray);margin-top:2px}
+.payment-amount{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--maroon)}
+.payment-tag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;background:var(--cream);padding:3px 8px;border-radius:2px;color:var(--warm-gray);margin-left:10px}
+.terms-list{list-style:none;padding:0}
+.terms-list li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--sand);font-size:14px;color:#4A423A;align-items:flex-start}
+.terms-list li:last-child{border-bottom:none}
+.terms-list li::before{content:'—';color:var(--maroon);flex-shrink:0;margin-top:2px}
+.accept-section{background:var(--dark);padding:60px;border-radius:4px;text-align:center}
+.accept-section h2{color:var(--white);font-size:32px;margin-bottom:16px}
+.accept-section p{color:rgba(255,255,255,0.6);font-size:14px;max-width:420px;margin:0 auto 36px}
+.accept-btn{display:inline-block;background:var(--maroon);color:var(--white);padding:16px 48px;border:none;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;text-decoration:none}
+.accept-btn:hover{background:var(--maroon-light)}
+.contact-row{display:flex;justify-content:center;gap:40px;margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap}
+.contact-row a{font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s}
+.contact-row a:hover{color:rgba(255,255,255,0.9)}
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);padding:24px 80px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer span{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px}
+@media(max-width:640px){header{padding:40px 28px 36px}.header-top{flex-direction:column;gap:16px}main{padding:60px 24px}.accept-section{padding:40px 28px}.investment-header{flex-direction:column;gap:8px;text-align:center}.payment-rows{padding:0 20px}footer{padding:20px 28px;justify-content:center;text-align:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="from-brand">Prepared by<strong>DOTxLabs</strong></div>
+    <div class="proposal-badge">Project Proposal</div>
+  </div>
+  <div class="header-main">
+    <h1>Website for<br><em>Diligent Auto</em><br>Detailing &amp; Maintenance</h1>
+  </div>
+  <div class="header-meta">
+    <div class="meta-item"><label>Prepared for</label><span>Jamie — Diligent Auto</span></div>
+    <div class="meta-item"><label>Date Issued</label><span>March 3, 2025</span></div>
+    <div class="meta-item"><label>Est. Delivery</label><span>7–14 Business Days</span></div>
+    <div class="meta-item"><label>Valid Until</label><span>March 17, 2025</span></div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="section-label">Overview</div>
+    <div class="overview-card">
+      <p>This proposal outlines the scope, timeline, and investment for designing and developing a professional website for Diligent Auto Detailing &amp; Maintenance. The goal is a high-converting, credibility-first website that drives bookings, communicates professionalism, and positions Diligent Auto as the go-to mobile detailing service across Brampton and Mississauga.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Scope of Work</div>
+    <h2>What We're Building</h2>
+    <p>A fully custom, mobile-optimised website built to convert visitors into booked clients — no templates, no shortcuts.</p>
+    <div class="deliverables-grid">
+      <div class="deliverable-item"><div class="del-number">01</div><div class="del-title">Homepage</div><div class="del-desc">Hero section with tagline, trust signals, and a primary CTA to book.</div></div>
+      <div class="deliverable-item"><div class="del-number">02</div><div class="del-title">Services &amp; Pricing Page</div><div class="del-desc">Full breakdown of Fresh &amp; Clean, Diligent Pro, and Headlight Restoration with compact vs. large car pricing and a special requests section.</div></div>
+      <div class="deliverable-item"><div class="del-number">03</div><div class="del-title">Booking Form</div><div class="del-desc">Integrated form for standard bookings. Phone number prominently featured for fleet and special enquiries.</div></div>
+      <div class="deliverable-item"><div class="del-number">04</div><div class="del-title">Before &amp; After Gallery</div><div class="del-desc">Visual proof of quality using your supplied photos in a slider or grid layout.</div></div>
+      <div class="deliverable-item"><div class="del-number">05</div><div class="del-title">Fleet &amp; Dealership Section</div><div class="del-desc">Dedicated area for fleet and dealership enquiries with a tailored contact form.</div></div>
+      <div class="deliverable-item"><div class="del-number">06</div><div class="del-title">About &amp; Trust Section</div><div class="del-desc">Brand story, service area (Brampton &amp; Mississauga), and credentials that build visitor confidence.</div></div>
+      <div class="deliverable-item"><div class="del-number">07</div><div class="del-title">Local SEO Foundation</div><div class="del-desc">On-page SEO targeting mobile detailing keywords in Brampton &amp; Mississauga.</div></div>
+      <div class="deliverable-item"><div class="del-number">08</div><div class="del-title">Social &amp; Mobile Optimisation</div><div class="del-desc">Instagram link, click-to-call, and a fully responsive layout built for mobile-first visitors.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Timeline</div>
+    <h2>7–14 Business Days to Launch</h2>
+    <p>We move fast without cutting corners. Here's exactly how the project unfolds.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-phase">Phase 01</div>
+        <div class="timeline-title">Kickoff &amp; Content Prep</div>
+        <div class="timeline-days">Days 1–2</div>
+        <div class="timeline-desc">Logo is already in hand. You send over your before/after photos and any remaining written content. We confirm all pricing details and copy direction before building begins.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Phase 02</div>
+        <div class="timeline-title">Design &amp; Prototype</div>
+        <div class="timeline-days">Days 2–5</div>
+        <div class="timeline-desc">We build a live prototype you can view in your browser — real layout, real content, your brand colours. You review and give feedback before we proceed to full development.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Phase 03</div>
+        <div class="timeline-title">Development &amp; Content</div>
+        <div class="timeline-days">Days 5–10</div>
+        <div class="timeline-desc">Full build across all pages: booking form, gallery, fleet section, SEO setup, mobile optimisation, and Instagram integration.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Phase 04</div>
+        <div class="timeline-title">Review &amp; Revisions</div>
+        <div class="timeline-days">Days 10–12</div>
+        <div class="timeline-desc">You review the complete site. Includes up to 2 rounds of revisions. All feedback is actioned within 24–48 hours.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Phase 05</div>
+        <div class="timeline-title">Launch</div>
+        <div class="timeline-days">Days 13–14</div>
+        <div class="timeline-desc">Final checks, domain connection, and go-live. We hand over your credentials and walk you through managing basic updates.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Investment</div>
+    <h2>Transparent, Fixed Pricing</h2>
+    <p>No hidden fees, no surprise invoices. Everything is agreed upfront.</p>
+    <div class="investment-block">
+      <div class="investment-header">
+        <span>Total Project Investment</span>
+        <strong>$900 CAD</strong>
+      </div>
+      <div class="payment-rows">
+        <div class="payment-row">
+          <div class="payment-label">Deposit — Due to Begin<small>Reserves your project slot and kicks off Phase 01 immediately</small></div>
+          <div><span class="payment-amount">$600</span><span class="payment-tag">Due Now</span></div>
+        </div>
+        <div class="payment-row">
+          <div class="payment-label">Final Payment — Due at Launch<small>Paid upon your approval of the completed site, before going live</small></div>
+          <div><span class="payment-amount">$300</span><span class="payment-tag">At Launch</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Terms &amp; Conditions</div>
+    <h2>A Few Ground Rules</h2>
+    <ul class="terms-list">
+      <li>This proposal is valid for 14 days from the date of issue. Pricing may change after this window.</li>
+      <li>The project begins upon receipt of the $600 deposit. No work starts before this payment is received.</li>
+      <li>The logo has already been received. Client is responsible for supplying all remaining assets (before/after photos, written content) within 2 business days of kickoff. Delays may push the timeline accordingly.</li>
+      <li>This proposal includes up to 2 rounds of revisions. Additional revision rounds are billed at $75 CAD/hour.</li>
+      <li>The remaining balance of $300 is due before the website goes live. Full ownership of the site transfers to the client upon receipt of final payment.</li>
+      <li>DOTxLabs retains the right to display the completed project in its portfolio unless otherwise agreed in writing.</li>
+      <li>Any features requested outside the agreed scope will be quoted separately before additional work begins.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="accept-section">
+      <h2>Ready to get started?</h2>
+      <p>Click below and we'll have your deposit link over to you right away.</p>
+      <a id="acceptBtn" href="#" class="accept-btn">Accept &amp; Let's Go</a>
+      <div class="contact-row">
+        <a href="tel:6474603641">647-460-3641</a>
+        <a href="mailto:david@dotxlabs.com">david@dotxlabs.com</a>
+        <a href="https://www.dotxlabs.com" target="_blank">www.dotxlabs.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; 2025 DOTxLabs</span>
+  <span>Confidential — Prepared for Diligent Auto Detailing &amp; Maintenance</span>
+</footer>
+
+<script>
+  var subject = encodeURIComponent("Proposal Accepted — Let's Get Started");
+  var body = encodeURIComponent(
+    "Hi David,\n\n" +
+    "I've gone through the proposal for the Diligent Auto Detailing & Maintenance website and I'm ready to move forward.\n\n" +
+    "Please send over the deposit link for $600 so we can get the ball rolling. Looking forward to seeing the site come together!\n\n" +
+    "Talk soon,\n" +
+    "Jamie\n" +
+    "Diligent Auto Detailing & Maintenance\n" +
+    "437-557-4382"
+  );
+  document.getElementById("acceptBtn").href = "mailto:david@dotxlabs.com?subject=" + subject + "&body=" + body;
+</script>
+
+</body>
+</html>
